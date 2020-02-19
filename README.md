@@ -1,8 +1,6 @@
 # Project-1
 Alternating disks: light-dark
 
-Group members:
+Group member:
 
-Ada Lovelace adalovelace@csu.fullerton.edu
-
-Charles Babbage charlesbab@csu.fullerton.edu
+Jimmy Phong JimmyPhong16@csu.fullerton.edu
