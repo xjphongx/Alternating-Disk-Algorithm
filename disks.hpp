@@ -100,13 +100,9 @@ public:
   // that the first disk at index 0 is light, the second disk at index 1
   // is dark, and so on for the entire row of disks.
   bool is_alternating() const {
-    cout << "\nTesting the is_alternating function"<<endl;
-    cout << endl;
  
   for(int i = 0; i < _colors.size();i++)
- {
-     cout << _colors[i] << " "; //testing the disk RESULT: 0 1
- 
+  {
      //if first spot is light, else it starts with dark
      if(_colors[0]== DISK_LIGHT)
      {
@@ -143,31 +139,30 @@ public:
   // indices).
   bool is_sorted() const {
 
-    /*
-    cout << "\ntest"<<endl;
-    cout << "Total count: " << total_count()<<endl;
-    */
-    int half = total_count()/2;
-    cout <<"half "<< half <<endl;
+    cout << endl;
+    for(int a = 0; a < total_count();a++)
+    {
+      cout << _colors[a]<< " ";
+
+
+    }
     
 
-    bool isWhite = true;//assume the first half is all white
+    //bool isWhite = true;//assume the first half is all white
     //check if there are any darks in the first half
-    for (int j = 0; j < half;j++)
+    for (int j = 0; j < total_count();j++)
     {  
-        if(_colors[j] == DISK_DARK)
+        if(j < total_count()/2)//first half must be white
         {
-            isWhite == false;
-        }
-        else
+            if(_colors[j] == DISK_DARK)
+            return false;
+        }else//this is for last half must be dark
         {
-          cout << " 0  for white" <<endl;
-        
-          
+            if(_colors[j] == DISK_LIGHT)
+            return false;
         }
-        
     }
-    return isWhite; 
+    return true;//if everything is already sorted 
 
     
   }
