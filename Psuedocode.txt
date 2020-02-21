@@ -1,0 +1,35 @@
+Algorithm Design
+
+This text file will contain the psuedocode 
+for the Left-to-Right and Lawnmower Algorithm.
+
+Left-to-Right 
+
+Parameter: before vector
+Create a temp object = before vector
+
+for i=0 to size do
+    for j=0 to size - 1 do 
+        if(current > next)
+            swap current and next
+            Increment counter
+
+return sorted vector
+
+
+Lawnmower
+
+Parameter: before vector
+Create a temp object = before vector 
+
+for i=0 to (size/2) do
+    for j=0 (size-1) do 
+        if(current > next)
+            swap current and next
+            Increment counter
+    for k=(size-1) to 0 do //counting down (-1)
+        if(prev > current)
+            swap prev and current   //prev goes first
+            Increment counter
+
+return sorted vector
