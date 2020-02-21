@@ -142,9 +142,29 @@ public:
   // on the left (low indices) and all dark disks on the right (high
   // indices).
   bool is_sorted() const {
-    // TODO: Write code for this function, including rewriting the return
-    // statement, and then delete these comments.
-   return false;
+
+    cout << "\ntest"<<endl;
+    cout << "Total count: " << total_count()<<endl;
+
+    int half = total_count()/2;
+    cout <<"half "<< half <<endl;
+
+    bool isWhite = true;//assume the first half is all white
+
+
+    //check if there are any darks in the first half
+    for (int j = 0; j < half;j++)
+    { 
+        
+        if(_colors[j] == DISK_DARK)
+        {
+            isWhite == false;
+        }
+        
+     
+    }
+
+    return isWhite;
   }
 };
 
