@@ -22,6 +22,8 @@
 #include <string>
 #include <vector>
 
+using namespace std;//so i dont have to use std::
+
 // State of one disk, either light or dark.
 enum disk_color { DISK_LIGHT, DISK_DARK };
 
@@ -98,11 +100,44 @@ public:
   // that the first disk at index 0 is light, the second disk at index 1
   // is dark, and so on for the entire row of disks.
   bool is_alternating() const {
-    // TODO: Write code for this function, including rewriting the return
-    // statement, and then delete these comments.
-    return false;
-  }
-
+    cout << "\nTesting the is_alternating function"<<endl;
+    cout << endl;
+ 
+  for(int i = 0; i < _colors.size();i++)
+ {
+     cout << _colors[i] << " "; //testing the disk RESULT: 0 1
+ 
+     //if first spot is light, else it starts with dark
+     if(_colors[0]== DISK_LIGHT)
+     {
+         if(i%2 == 0)
+         {
+             if(_colors[i]==DISK_DARK)
+             return false;
+         }else
+         {
+             if(_colors[i]==DISK_LIGHT)
+             return false;
+         }
+        
+     }
+     else//this else statements considers the case if black goes first
+     {
+         if(i%2 == 0)
+         {
+             if(_colors[i]==DISK_LIGHT)
+             return false;
+         }else
+         {
+             if(_colors[i]==DISK_DARK)
+             return false;
+         }
+     }
+ }
+   return true;//assume that it is alternating unless proven otherwise
+ }
+ 
+ 
   // Return true when this disk_state is fully sorted, with all light disks
   // on the left (low indices) and all dark disks on the right (high
   // indices).
