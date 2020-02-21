@@ -143,28 +143,33 @@ public:
   // indices).
   bool is_sorted() const {
 
+    /*
     cout << "\ntest"<<endl;
     cout << "Total count: " << total_count()<<endl;
-
+    */
     int half = total_count()/2;
     cout <<"half "<< half <<endl;
+    
 
     bool isWhite = true;//assume the first half is all white
-
-
     //check if there are any darks in the first half
     for (int j = 0; j < half;j++)
-    { 
-        
+    {  
         if(_colors[j] == DISK_DARK)
         {
             isWhite == false;
         }
+        else
+        {
+          cout << " 0  for white" <<endl;
         
-     
+          
+        }
+        
     }
+    return isWhite; 
 
-    return isWhite;
+    
   }
 };
 
@@ -195,13 +200,23 @@ public:
 
 // Algorithm that sorts disks using the left-to-right algorithm.
 sorted_disks sort_left_to_right(const disk_state& before) {
-  // TODO: Write code for this function, including rewriting the return
-  // statement, and then delete these comments.
 
-  // check that the input is in alternating format  
-  assert(before.is_alternating());
-  
-  return sorted_disks(before, 0);
+//Included this because before is a constant parameter 
+disk_state temp = before;//doing this allows me to make changes to the temp
+int swapCount = 0; //keeps track of the amount of swaps
+
+for(int i =0; i < temp.total_count();i++)
+{
+    for(int j = 0; j < temp.total_count()-1;j++)//have to add -1 because of bound error
+    {
+      if(temp.get(j) > temp.get(j+1))//if the current disk is dark and the next is light, swap
+      {
+          temp.swap(j); // this takes the current index and swaps with the next
+          swapCount++;
+      }
+    }
+}
+  return sorted_disks(disk_state(temp), swapCount);//return temp and it becomes the new sorted vector
 }
 
 // Algorithm that sorts disks using the lawnmower algorithm.
