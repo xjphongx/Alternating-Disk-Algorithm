@@ -5,7 +5,7 @@ Alternating Disks: Light-Dark
 Jimmy Phong   JimmyPhong16@csu.fullerton.edu
 
 ## Project Description
-In this project, I was given the task to analyze two algorithms: Left-to-Right Algorithm and Lawnmower Algorithm. This project description includes complete functionality of the running skeleton code provided by our professor, formatility of the report and github presentation, and a complete analysis of the algorithm’s efficiency class. Everything is up-to-date and uploaded on to my Github repository. 
+In this project, I was given the task to analyze two algorithms: Left-to-Right Algorithm and Lawnmower Algorithm. This project submission includes complete functionality of the running skeleton code provided by our professor, formatility of the report and Github presentation, and a complete analysis of the algorithm’s efficiency class. Everything is up-to-date and uploaded on to my Github repository. 
 
 ## License
 MIT
