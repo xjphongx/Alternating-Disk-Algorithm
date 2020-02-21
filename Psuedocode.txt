@@ -1,6 +1,6 @@
 Algorithm Design
 
-This text file will contain the psuedocode 
+This text file will contain the pseudocode 
 for the Left-to-Right and Lawnmower Algorithm.
 
 Left-to-Right 
@@ -33,3 +33,4 @@ for i=0 to (size/2) do
             Increment counter
 
 return sorted vector
+ 
