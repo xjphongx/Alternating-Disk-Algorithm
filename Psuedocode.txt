@@ -1,36 +1,40 @@
-Algorithm Design
+Algorithm Analyze 
 
-This text file will contain the pseudocode 
+This text file contains:
+1)The pseudocode 
+2)Space Complexity
+3)Big O Notation
 for the Left-to-Right and Lawnmower Algorithm.
 
-Left-to-Right 
 
+Left-to-Right                                       Space Complexity
+                                            Let size = n
+Parameter: before vector               
+Create a temp object = before vector       +1           
+
+for i=0 to size do                         (n+1) times
+    for j=0 to size - 1 do                 n times    
+        if(current > next)                 +1           Calculation: 1+ (n+1)(n)(1+max(3,0))+1
+            swap current and next          +1                        1+ (n+1)(4n)+1
+            Increment counter              +2                        4(n^2)+4n+2    therefore O(n^2)
+
+return sorted vector                       +1         
+
+
+Lawnmower                                           Space Complexity
+                                            Let size = n
 Parameter: before vector
-Create a temp object = before vector
+Create a temp object = before vector       +1
 
-for i=0 to size do
-    for j=0 to size - 1 do 
-        if(current > next)
-            swap current and next
-            Increment counter
+for i=0 to (size/2) do                     ((n/2)+1)times
+    for j=0 (size-1) do                    n times
+        if(current > next)                 +1
+            swap current and next          +1            Calculation: 1+((n/2)+1)(4n)(4n)+1
+            Increment counter              +2                           ((n/2)+1)(16n^2)+2
+    for k=(size-1) to 0 do                 n times                      (8n^3)+(16n^2)+2    therefore O(n^3)
+        if(prev > current)                 +1
+            swap prev and current          +1
+            Increment counter              +2
 
-return sorted vector
-
-
-Lawnmower
-
-Parameter: before vector
-Create a temp object = before vector 
-
-for i=0 to (size/2) do
-    for j=0 (size-1) do 
-        if(current > next)
-            swap current and next
-            Increment counter
-    for k=(size-1) to 0 do //counting down (-1)
-        if(prev > current)
-            swap prev and current   //prev goes first
-            Increment counter
-
-return sorted vector
+return sorted vector                       +1
  
