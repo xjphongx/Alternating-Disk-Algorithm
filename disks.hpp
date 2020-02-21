@@ -221,11 +221,33 @@ for(int i =0; i < temp.total_count();i++)
 
 // Algorithm that sorts disks using the lawnmower algorithm.
 sorted_disks sort_lawnmower(const disk_state& before) {
-  // TODO: Write code for this function, including rewriting the return
-  // statement, and then delete these comments.
-  // check that the input is in alternating format
-  assert(before.is_alternating());
+ 
+disk_state temp = before;
+int swapCount = 0;
 
-  // TODO
-  return sorted_disks(before, 0);
+for (int i = 0; i < temp.total_count()/2;i++)//divide 2 if possible
+{
+    //forloop to go forward
+    for(int j = 0; j < temp.total_count()-1; j++)
+    {
+        if(temp.get(j) > temp.get(j+1))
+        {
+          temp.swap(j);//swaps with respect to the left 
+          swapCount++;
+        }
+
+    }
+    //forloop to go backward
+    for(int k = temp.total_count()-1; k > 0; k--)
+    {
+        if(temp.get(k-1) > temp.get(k))//make the swap if (left) is greater than (right)
+        {
+          temp.swap(k-1);
+          swapCount++;
+        }
+    }
+
+}
+
+  return sorted_disks(disk_state(temp), swapCount);
 }
